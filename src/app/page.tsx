@@ -8,12 +8,15 @@ import {
   ChevronRight,
   Footprints,
   Headphones,
+  Globe2,
+  Landmark,
   MapPin,
   Menu,
   Play,
   Route,
   Share2,
   Sparkles,
+  Smartphone,
   Users,
   WifiOff,
   X,
@@ -37,12 +40,14 @@ const steps = [
     title: "Listen to stories",
     text: "Hear engaging audio guides in Albanian or English.",
     image: "/assets/how-audio-hd.png",
+    mobileTitle: "Learn & enjoy",
   },
   {
     number: "4",
     title: "Earn & share",
     text: "Unlock badges, track progress and share your journey.",
     image: "/assets/how-badge-hd.png",
+    mobileTitle: "Finish & share",
   },
 ];
 
@@ -248,10 +253,10 @@ export default function Home() {
 
       <section className="trust-strip" id="about">
         <div className="container trust-grid">
-          <div><strong>1 route</strong><span>A focused first experience</span></div>
-          <div><strong>2 languages</strong><span>Albanian and English</span></div>
-          <div><strong>12+ landmarks</strong><span>Stories along the route</span></div>
-          <div><strong>100% mobile</strong><span>Installable as a PWA</span></div>
+          <div><Route className="trust-icon" /><strong>1 route</strong><span>A focused first experience</span></div>
+          <div><Globe2 className="trust-icon" /><strong>2 languages</strong><span>Albanian and English</span></div>
+          <div><Landmark className="trust-icon" /><strong>13 landmarks</strong><span>Stories along the route</span></div>
+          <div><Smartphone className="trust-icon" /><strong>100% mobile</strong><span>Installable as a PWA</span></div>
         </div>
       </section>
 
@@ -276,7 +281,8 @@ export default function Home() {
               >
                 <span className="step-number">{step.number}</span>
                 <img className="step-image" src={step.image} alt="" />
-                <h3>{step.title}</h3>
+                <h3 className="desktop-step-title">{step.title}</h3>
+                <h3 className="mobile-step-title">{step.mobileTitle ?? step.title}</h3>
                 <p>{step.text}</p>
               </motion.article>
             ))}
@@ -343,6 +349,7 @@ export default function Home() {
       </section>
 
       <section className="section city-section">
+        <h2 className="mobile-city-title">Explore Tirana</h2>
         <div className="container city-layout">
           <motion.div className="city-copy" {...reveal}>
             <span className="eyebrow"><MapPin size={15} /> The city you will love</span>
@@ -369,9 +376,21 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div className="mobile-highlight-grid">
+          {[landmarks[2], landmarks[3]].map((landmark) => (
+            <article className="mobile-highlight-card" key={`mobile-${landmark.title}`}>
+              <img src={landmark.image} alt={landmark.title} />
+              <div><strong>{landmark.title}</strong><p>{landmark.title === "Clock Tower" ? "A symbol of Tirana since 1822." : "Discover Albania’s past and identity."}</p><span>Learn more →</span></div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="waitlist-section" id="waitlist">
+        <div className="container mobile-waitlist-banner">
+          <div><strong>Be the first to explore.</strong><span>Join the waitlist and we’ll let you know when Tirana Run is ready.</span></div>
+          <a href="#waitlist">Join the waitlist <ArrowRight size={16} /></a>
+        </div>
         <div className="container">
           <motion.div className="waitlist-card" {...reveal}>
             <img className="waitlist-art" src="/assets/waitlist-background.png" alt="Runner, Tirana skyline and route pin illustration" />

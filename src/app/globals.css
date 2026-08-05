@@ -217,6 +217,7 @@ img { max-width: 100%; display: block; }
 .trust-grid div { padding: 25px 28px; border-right: 1px solid var(--line); }
 .trust-grid div:last-child { border-right: 0; }
 .trust-grid strong, .trust-grid span { display: block; }
+.trust-icon, .mobile-step-title, .mobile-city-title, .mobile-highlight-grid, .mobile-waitlist-banner { display: none; }
 .trust-grid strong { color: var(--green-800); font-size: 1.2rem; }
 .trust-grid span { margin-top: 6px; color: var(--muted); font-size: 0.84rem; }
 
@@ -397,56 +398,78 @@ img { max-width: 100%; display: block; }
   .hero-lead { max-width: 330px; margin: 0; font-size: .88rem; line-height: 1.55; }
   .hero-actions { display: flex; margin: 18px 0 0; justify-content: flex-start; gap: 9px; }
   .hero-actions .button { width: auto; min-height: 46px; padding: 0 18px; font-size: .82rem; }
-  .hero-actions .button-secondary { width: 46px; padding: 0; font-size: 0; border-radius: 50%; }
+  .hero-actions .button-secondary { width: auto; padding: 0 15px; font-size: .78rem; border-radius: 999px; }
   .hero-actions .button-secondary svg { width: 16px; }
   .social-proof { display: none; }
-  .phone-place-card { left: 20px; right: 20px; bottom: 24px; width: auto; min-width: 0; grid-template-columns: 40px 1fr 28px; padding: 8px; border-radius: 15px; }
+  .phone-place-card { left: auto; right: 16px; bottom: 24px; width: 220px; min-width: 0; grid-template-columns: 40px 1fr 28px; padding: 8px; border-radius: 15px; }
   .phone-thumb { width: 40px; height: 40px; }
   .phone-place-card strong { font-size: .65rem; }
   .phone-place-card div > span { font-size: .5rem; }
   .hero-card-dots { bottom: -16px; }
   .trust-strip { padding: 14px 0 28px; }
-  .trust-grid { grid-template-columns: repeat(2, 1fr); border-radius: 20px; overflow: hidden; }
-  .trust-grid div { min-height: 88px; padding: 17px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .trust-grid div:nth-child(2n) { border-right: 0; }
-  .trust-grid div:nth-last-child(-n+2) { border-bottom: 0; }
-  .trust-grid strong { font-size: .98rem; }
-  .trust-grid span { font-size: .7rem; line-height: 1.35; }
+  .trust-grid { grid-template-columns: repeat(4, 1fr); border-radius: 18px; overflow: hidden; }
+  .trust-grid div { min-height: 76px; padding: 14px 7px; border-right: 1px solid var(--line); border-bottom: 0; text-align: center; }
+  .trust-grid div:last-child { border-right: 0; }
+  .trust-grid strong { font-size: .78rem; line-height: 1.15; }
+  .trust-grid span { margin-top: 5px; font-size: .55rem; line-height: 1.25; }
+  .trust-icon { width: 22px; height: 22px; display: block; margin: 0 auto 7px; color: var(--green-700); stroke-width: 2; }
   .section-heading { margin-bottom: 28px; }
   .section-heading h2, .city-copy h2 { font-size: 2.15rem; }
   .section-heading p, .city-copy p { font-size: .9rem; line-height: 1.55; }
   .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .step-card { min-height: 225px; padding: 15px 11px 18px; border-radius: 20px; }
-  .step-number { left: 12px; top: 12px; width: 25px; height: 25px; }
-  .step-image { width: 105px; height: 86px; margin: 23px auto 0; }
-  .step-card h3 { margin: 12px 0 6px; font-size: .88rem; }
-  .step-card p { font-size: .72rem; line-height: 1.45; }
+  .step-card { min-height: 120px; display: grid; grid-template-columns: 68px 1fr; grid-template-rows: auto auto; align-content: center; column-gap: 8px; padding: 13px 10px; border-radius: 18px; }
+  .step-number { left: 7px; top: 7px; width: 21px; height: 21px; font-size: .65rem; }
+  .step-image { grid-row: 1 / 3; width: 66px; height: 66px; margin: 0; }
+  .step-card h3 { align-self: end; margin: 0 0 4px; text-align: left; font-size: .76rem; line-height: 1.25; }
+  .desktop-step-title { display: none; }
+  .mobile-step-title { display: block; }
+  .step-card p { margin: 0; text-align: left; font-size: .62rem; line-height: 1.35; }
+  #features { display: none; }
   .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .feature-card { min-height: 180px; padding: 18px 14px; border-radius: 19px; }
   .feature-icon { width: 46px; height: 46px; border-radius: 14px; }
   .feature-icon svg { width: 22px; }
   .feature-card h3 { margin: 15px 0 6px; font-size: .88rem; }
   .feature-card p { font-size: .72rem; line-height: 1.45; }
-  .preview-grid { gap: 28px; }
-  .preview-copy h2 { font-size: 2.2rem; }
+  .preview-section { padding-top: 46px; padding-bottom: 38px; }
+  .preview-grid { gap: 16px; }
+  .preview-copy { max-width: none; text-align: center; }
+  .preview-copy .eyebrow, .preview-copy > p, .preview-copy .check-list, .preview-copy .text-link { display: none; }
+  .preview-copy h2 { margin: 0; font-size: 1.35rem; letter-spacing: -.025em; }
   .preview-art { padding: 10px; border-radius: 22px; }
-  .phone-gallery { min-height: 390px; justify-content: flex-start; gap: 12px; overflow-x: auto; padding: 16px 10px 22px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .phone-gallery { min-height: 330px; justify-content: center; gap: 12px; overflow: hidden; padding: 14px 4px 20px; }
   .phone-gallery::-webkit-scrollbar { display: none; }
-  .app-phone { position: relative; inset: auto; width: 205px; min-width: 205px; border-width: 4px; border-radius: 23px; transform: none; scroll-snap-align: center; }
-  .app-phone-3 { width: 205px; }
+  .app-phone { position: relative; inset: auto; width: 30%; min-width: 0; border-width: 3px; border-radius: 18px; transform: none; }
+  .app-phone-2, .app-phone-4 { display: none; }
+  .app-phone-3 { width: 34%; transform: scale(1.08); z-index: 3; }
   .city-section { padding-top: 48px; }
-  .city-layout { gap: 22px; margin-bottom: 12px; }
+  .mobile-city-title { display: block; margin: 0 0 12px; text-align: center; font-size: 1.45rem; letter-spacing: -.03em; }
+  .city-layout { display: block; width: min(100% - 24px, 1180px); margin: 0 auto 14px; }
+  .city-copy { display: none; }
   .city-button { width: auto; min-height: 46px; }
   .route-decoration, .route-decoration img { height: 215px; border-radius: 22px; }
-  .landmark-carousel { padding: 12px 0 26px; mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+  .landmark-carousel { display: none; }
   .landmark-track { gap: 12px; padding-left: 12px; }
-  .landmark-card { width: 228px; border-radius: 19px; }
-  .landmark-card > img { height: 145px; }
-  .landmark-card-content { min-height: 78px; grid-template-columns: 1fr 34px; padding: 13px 14px; }
-  .landmark-card strong { font-size: .82rem; }
-  .landmark-card-content div > span { font-size: .64rem; }
-  .landmark-play { width: 32px; height: 32px; }
+  .landmark-card { width: 174px; border-radius: 18px; }
+  .landmark-card > img { height: 112px; }
+  .landmark-card-content { min-height: 72px; grid-template-columns: 1fr 28px; padding: 11px 10px; }
+  .landmark-card strong { font-size: .72rem; }
+  .landmark-card-content div > span { font-size: .55rem; }
+  .landmark-play { width: 28px; height: 28px; }
+  .mobile-highlight-grid { width: min(100% - 24px, 1180px); display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 auto; }
+  .mobile-highlight-card { min-width: 0; overflow: hidden; display: grid; grid-template-columns: 42% 58%; align-items: center; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: var(--soft-shadow); }
+  .mobile-highlight-card img { width: 100%; height: 120px; object-fit: cover; }
+  .mobile-highlight-card div { padding: 10px 8px; }
+  .mobile-highlight-card strong { display: block; font-size: .7rem; line-height: 1.25; }
+  .mobile-highlight-card p { margin: 5px 0; color: var(--muted); font-size: .54rem; line-height: 1.35; }
+  .mobile-highlight-card span { color: var(--green-700); font-size: .58rem; font-weight: 850; }
   .waitlist-section { padding: 28px 0 58px; }
+  .mobile-waitlist-banner { min-height: 118px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 19px 17px; border-radius: 20px; color: #fff; background: linear-gradient(135deg, #14873d, #56b51e); box-shadow: 0 16px 38px rgba(17,132,60,.25); }
+  .mobile-waitlist-banner strong, .mobile-waitlist-banner span { display: block; }
+  .mobile-waitlist-banner strong { font-size: 1rem; }
+  .mobile-waitlist-banner span { margin-top: 5px; max-width: 195px; font-size: .66rem; line-height: 1.4; }
+  .mobile-waitlist-banner a { min-height: 42px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 12px; color: var(--green-900); background: #fff; font-size: .66rem; font-weight: 850; }
+  .waitlist-section > .container:not(.mobile-waitlist-banner) { display: none; }
   .waitlist-card { min-height: 410px; border-radius: 24px; }
   .waitlist-art { object-position: 50% center; }
   .waitlist-content { width: calc(100% - 28px); padding: 38px 0; }
