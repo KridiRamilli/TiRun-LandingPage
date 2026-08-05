@@ -108,6 +108,7 @@ img { max-width: 100%; display: block; }
   object-fit: cover;
   object-position: center;
 }
+.hero-picture { position: absolute; inset: 0; }
 .hero-left-wash {
   position: absolute;
   inset: 0 auto 0 0;
@@ -382,34 +383,88 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 600px) {
   .container { width: min(100% - 24px, 1180px); }
-  .section { padding: 76px 0; }
-  .header-inner { height: 70px; }
-  .brand img { width: 155px; }
-  .hero-stage { min-height: 760px; }
-  .hero-background { object-position: 72% bottom; }
-  .hero-left-wash { background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.98) 48%, rgba(255,255,255,0) 72%); }
-  .hero-copy { top: 6%; left: 14px; right: 14px; width: auto; }
-  .hero-copy h1 { font-size: clamp(3rem, 15vw, 4.35rem); }
-  .hero-actions { display: grid; }
-  .button { width: 100%; }
-  .social-proof { align-items: flex-start; text-align: left; }
-  .trust-grid, .steps-grid, .features-grid { grid-template-columns: 1fr; }
-  .trust-grid div { border-right: 0; border-bottom: 1px solid var(--line); }
-  .trust-grid div:last-child { border-bottom: 0; }
-  .step-card { min-height: 275px; }
-  .preview-art { padding: 12px; border-radius: 24px; }
-  .phone-gallery { min-height: 430px; justify-content: flex-start; gap: 14px; overflow-x: auto; padding: 18px 8px 24px; scroll-snap-type: x mandatory; }
-  .app-phone { position: relative; inset: auto; width: 230px; min-width: 230px; border-width: 5px; transform: none; scroll-snap-align: center; }
-  .app-phone-3 { width: 230px; }
-  .landmark-card { width: 270px; }
-  .landmark-card > img { height: 175px; }
-  .route-decoration, .route-decoration img { height: 270px; }
-  .waitlist-card { min-height: 500px; border-radius: 28px; }
+  .section { padding: 58px 0; }
+  .header-inner { height: 64px; }
+  .brand img { width: 146px; }
+  .mobile-menu-button { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 7px 18px rgba(12,53,28,.08); }
+  .hero { padding-bottom: 6px; }
+  .hero-stage { min-height: 720px; aspect-ratio: auto; border-radius: 0 0 30px 30px; }
+  .hero-background { object-position: center bottom; }
+  .hero-left-wash { width: 100%; background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.99) 39%, rgba(255,255,255,.8) 51%, rgba(255,255,255,0) 68%); }
+  .hero-copy { top: 5.5%; left: 20px; right: 20px; text-align: left; }
+  .hero-copy .eyebrow { margin: 0; padding: 6px 9px; font-size: .62rem; }
+  .hero-copy h1 { max-width: 345px; margin: 13px 0 13px; font-size: clamp(2.65rem, 12vw, 3.35rem); line-height: .98; letter-spacing: -.055em; }
+  .hero-lead { max-width: 330px; margin: 0; font-size: .88rem; line-height: 1.55; }
+  .hero-actions { display: flex; margin: 18px 0 0; justify-content: flex-start; gap: 9px; }
+  .hero-actions .button { width: auto; min-height: 46px; padding: 0 18px; font-size: .82rem; }
+  .hero-actions .button-secondary { width: 46px; padding: 0; font-size: 0; border-radius: 50%; }
+  .hero-actions .button-secondary svg { width: 16px; }
+  .social-proof { display: none; }
+  .phone-place-card { left: 20px; right: 20px; bottom: 24px; width: auto; min-width: 0; grid-template-columns: 40px 1fr 28px; padding: 8px; border-radius: 15px; }
+  .phone-thumb { width: 40px; height: 40px; }
+  .phone-place-card strong { font-size: .65rem; }
+  .phone-place-card div > span { font-size: .5rem; }
+  .hero-card-dots { bottom: -16px; }
+  .trust-strip { padding: 14px 0 28px; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); border-radius: 20px; overflow: hidden; }
+  .trust-grid div { min-height: 88px; padding: 17px 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .trust-grid div:nth-child(2n) { border-right: 0; }
+  .trust-grid div:nth-last-child(-n+2) { border-bottom: 0; }
+  .trust-grid strong { font-size: .98rem; }
+  .trust-grid span { font-size: .7rem; line-height: 1.35; }
+  .section-heading { margin-bottom: 28px; }
+  .section-heading h2, .city-copy h2 { font-size: 2.15rem; }
+  .section-heading p, .city-copy p { font-size: .9rem; line-height: 1.55; }
+  .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .step-card { min-height: 225px; padding: 15px 11px 18px; border-radius: 20px; }
+  .step-number { left: 12px; top: 12px; width: 25px; height: 25px; }
+  .step-image { width: 105px; height: 86px; margin: 23px auto 0; }
+  .step-card h3 { margin: 12px 0 6px; font-size: .88rem; }
+  .step-card p { font-size: .72rem; line-height: 1.45; }
+  .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .feature-card { min-height: 180px; padding: 18px 14px; border-radius: 19px; }
+  .feature-icon { width: 46px; height: 46px; border-radius: 14px; }
+  .feature-icon svg { width: 22px; }
+  .feature-card h3 { margin: 15px 0 6px; font-size: .88rem; }
+  .feature-card p { font-size: .72rem; line-height: 1.45; }
+  .preview-grid { gap: 28px; }
+  .preview-copy h2 { font-size: 2.2rem; }
+  .preview-art { padding: 10px; border-radius: 22px; }
+  .phone-gallery { min-height: 390px; justify-content: flex-start; gap: 12px; overflow-x: auto; padding: 16px 10px 22px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .phone-gallery::-webkit-scrollbar { display: none; }
+  .app-phone { position: relative; inset: auto; width: 205px; min-width: 205px; border-width: 4px; border-radius: 23px; transform: none; scroll-snap-align: center; }
+  .app-phone-3 { width: 205px; }
+  .city-section { padding-top: 48px; }
+  .city-layout { gap: 22px; margin-bottom: 12px; }
+  .city-button { width: auto; min-height: 46px; }
+  .route-decoration, .route-decoration img { height: 215px; border-radius: 22px; }
+  .landmark-carousel { padding: 12px 0 26px; mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+  .landmark-track { gap: 12px; padding-left: 12px; }
+  .landmark-card { width: 228px; border-radius: 19px; }
+  .landmark-card > img { height: 145px; }
+  .landmark-card-content { min-height: 78px; grid-template-columns: 1fr 34px; padding: 13px 14px; }
+  .landmark-card strong { font-size: .82rem; }
+  .landmark-card-content div > span { font-size: .64rem; }
+  .landmark-play { width: 32px; height: 32px; }
+  .waitlist-section { padding: 28px 0 58px; }
+  .waitlist-card { min-height: 410px; border-radius: 24px; }
   .waitlist-art { object-position: 50% center; }
-  .waitlist-content { width: calc(100% - 28px); padding: 48px 0; }
+  .waitlist-content { width: calc(100% - 28px); padding: 38px 0; }
+  .waitlist-content h2 { font-size: 2.45rem; }
   .waitlist-form { grid-template-columns: 1fr; border-radius: 24px; padding: 8px; gap: 8px; }
   .waitlist-form input { min-height: 52px; }
   .waitlist-form button { justify-content: center; }
-  .footer-grid { grid-template-columns: 1fr; gap: 25px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 18px; padding: 42px 0 34px; }
+  .footer-brand { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 350px) {
+  .hero-copy { left: 15px; right: 15px; }
+  .hero-copy h1 { font-size: 2.45rem; }
+  .hero-lead { font-size: .82rem; }
+  .hero-actions .button { padding-inline: 15px; }
+  .step-card { min-height: 215px; }
+  .step-image { width: 92px; }
+  .feature-card { min-height: 170px; }
 }

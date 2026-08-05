@@ -159,14 +159,17 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-stage">
-          <motion.img
-            className="hero-background"
-            src="/assets/hero-clean.png"
-            alt="Tirana Run route, mobile app and runners in Tirana"
-            initial={{ opacity: 0, scale: 1.025 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9 }}
-          />
+          <picture className="hero-picture">
+            <source media="(max-width: 600px)" srcSet="/assets/hero-mobile.webp" />
+            <motion.img
+              className="hero-background"
+              src="/assets/hero-clean.png"
+              alt="Tirana Run route, mobile app and walkers in Tirana"
+              initial={{ opacity: 0, scale: 1.025 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9 }}
+            />
+          </picture>
 
           <div className="hero-left-wash" />
 
