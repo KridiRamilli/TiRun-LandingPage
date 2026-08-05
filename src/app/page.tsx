@@ -184,7 +184,10 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.72, delay: 0.12 }}
           >
-            <div className="eyebrow"><Sparkles size={15} /> Walk. Explore. Connect.</div>
+            <div className="hero-badges">
+              <div className="eyebrow"><Sparkles size={15} /> Walk. Explore. Connect.</div>
+              <div className="ai-badge"><Sparkles size={13} /> Powered by AZZE AI</div>
+            </div>
             <h1>
               Discover Tirana,
               <span>step by step.</span>
@@ -376,8 +379,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mobile-highlight-grid">
-          {[landmarks[2], landmarks[3]].map((landmark) => (
+        <div className="mobile-highlight-grid" aria-label="Swipe through Tirana landmarks">
+          {landmarks.map((landmark) => (
             <article className="mobile-highlight-card" key={`mobile-${landmark.title}`}>
               <img src={landmark.image} alt={landmark.title} />
               <div><strong>{landmark.title}</strong><p>{landmark.title === "Clock Tower" ? "A symbol of Tirana since 1822." : "Discover Albania’s past and identity."}</p><span>Learn more →</span></div>
