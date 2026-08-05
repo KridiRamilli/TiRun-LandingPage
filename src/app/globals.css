@@ -473,7 +473,7 @@ img { max-width: 100%; display: block; }
   .mobile-waitlist-banner strong { font-size: 1rem; }
   .mobile-waitlist-banner span { margin-top: 5px; max-width: 195px; font-size: .66rem; line-height: 1.4; }
   .mobile-waitlist-banner a { min-height: 42px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 12px; color: var(--green-900); background: #fff; font-size: .66rem; font-weight: 850; }
-  .waitlist-section > .container:not(.mobile-waitlist-banner) { display: none; }
+  .waitlist-section > .container:not(.mobile-waitlist-banner) { display: grid; }
   .waitlist-card { min-height: 410px; border-radius: 24px; }
   .waitlist-art { object-position: 50% center; }
   .waitlist-content { width: calc(100% - 28px); padding: 38px 0; }

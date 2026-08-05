@@ -112,12 +112,10 @@ export default function Home() {
 
   function submitWaitlist(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    handleSubmit(event);
-      if (state.succeeded){
-        
+    handleSubmit(event); 
         if (!email.trim()) return;
         setSubmitted(true);
-      }
+      
   }
 
   return (
@@ -397,10 +395,10 @@ export default function Home() {
       </section>
 
       <section className="waitlist-section" id="waitlist">
-        <div className="container mobile-waitlist-banner">
+        {/* <div className="container mobile-waitlist-banner">
           <div><strong>Be the first to explore.</strong><span>Join the waitlist and we’ll let you know when Tirana Run is ready.</span></div>
           <a href="#waitlist">Join the waitlist <ArrowRight size={16} /></a>
-        </div>
+        </div> */}
         <div className="container">
           <motion.div className="waitlist-card" {...reveal}>
             <img className="waitlist-art" src="/assets/waitlist-background.png" alt="Runner, Tirana skyline and route pin illustration" />
@@ -417,6 +415,7 @@ export default function Home() {
                   <input
                     id="email"
                     type="email"
+                    name="email"
                     required
                     placeholder="Enter your email address"
                     value={email}
