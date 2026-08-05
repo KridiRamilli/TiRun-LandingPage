@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -55,6 +55,24 @@ const features = [
   { title: "Offline-ready PWA", text: "Install it on your phone and keep exploring.", icon: WifiOff },
 ];
 
+const landmarks = [
+  { title: "Skanderbeg Square", image: "/assets/landmarks/skanderbeg-square.jpg" },
+  { title: "Et’hem Bey Mosque", image: "/assets/landmarks/ethem-bey-mosque.jpg" },
+  { title: "Clock Tower", image: "/assets/landmarks/clock-tower.jpg" },
+  { title: "National Historical Museum", image: "/assets/landmarks/national-history-museum.jpg" },
+  { title: "Pyramid of Tirana", image: "/assets/landmarks/pyramid-of-tirana.jpg" },
+  { title: "Bunk’Art 2", image: "/assets/landmarks/bunkart-2.jpg" },
+  { title: "Reja", image: "/assets/landmarks/reja.jpg" },
+  { title: "Resurrection of Christ Cathedral", image: "/assets/landmarks/orthodox-cathedral.jpg" },
+  { title: "Castle of Tirana", image: "/assets/landmarks/tirana-castle.jpg" },
+  { title: "Mother Teresa Square", image: "/assets/landmarks/mother-teresa-square.jpg" },
+  { title: "Air Albania Stadium", image: "/assets/landmarks/air-albania-stadium.jpg" },
+  { title: "Grand Park of Tirana", image: "/assets/landmarks/grand-park.jpg" },
+  { title: "Dajti Mountain", image: "/assets/landmarks/dajti-mountain.jpg" },
+];
+
+const heroLandmarks = [landmarks[0], landmarks[3], landmarks[1], landmarks[4], landmarks[11]];
+
 const reveal = {
   initial: { opacity: 0, y: 26 },
   whileInView: { opacity: 1, y: 0 },
@@ -66,6 +84,15 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [activeLandmark, setActiveLandmark] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(
+      () => setActiveLandmark((current) => (current + 1) % heroLandmarks.length),
+      3600,
+    );
+    return () => window.clearInterval(timer);
+  }, []);
 
   function submitWaitlist(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -173,12 +200,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <div className="phone-thumb" />
+            <img className="phone-thumb" src={heroLandmarks[activeLandmark].image} alt="" />
             <div>
-              <strong>National History Museum</strong>
+              <strong>{heroLandmarks[activeLandmark].title}</strong>
               <span>Learn more about the landmark</span>
             </div>
-            <span className="phone-play">▶</span>
+            <span className="phone-play"><Play size={10} fill="currentColor" /></span>
+            <div className="hero-card-dots" aria-label="Choose a featured landmark">
+              {heroLandmarks.map((landmark, index) => (
+                <button key={landmark.title} type="button" className={index === activeLandmark ? "active" : ""} aria-label={`Show ${landmark.title}`} aria-pressed={index === activeLandmark} onClick={() => setActiveLandmark(index)} />
+              ))}
+            </div>
           </motion.div>
 
           <motion.div
@@ -307,10 +339,18 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="container">
-          <motion.div className="city-image-shell" {...reveal}>
-            <img src="/assets/tirana-highlights.webp" alt="Tirana landmark highlights" />
-          </motion.div>
+        <div className="landmark-carousel" aria-label="Tirana landmarks">
+          <div className="landmark-track">
+            {[...landmarks, ...landmarks].map((landmark, index) => (
+              <article className="landmark-card" key={`${landmark.title}-${index}`} aria-hidden={index >= landmarks.length}>
+                <img src={landmark.image} alt={index < landmarks.length ? landmark.title : ""} loading="lazy" />
+                <div className="landmark-card-content">
+                  <div><strong>{landmark.title}</strong><span>Learn more about the landmark</span></div>
+                  <span className="landmark-play"><Play size={13} fill="currentColor" /></span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -371,6 +411,7 @@ export default function Home() {
         <div className="container footer-bottom">
           <span>© {new Date().getFullYear()} Tirana Run.</span>
           <span>Built for Tirana.</span>
+          <a href="/assets/landmarks/sources.json" target="_blank" rel="noreferrer">Photo credits</a>
         </div>
       </footer>
     </main>
