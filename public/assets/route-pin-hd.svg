@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Tirana walking route</title>
+  <desc id="desc">A crisp illustrated city map with a green walking route and location pin.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9fcf9"/><stop offset="1" stop-color="#e8f5e9"/></linearGradient>
+    <linearGradient id="route" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7cd15f"/><stop offset="1" stop-color="#138a3d"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#0b5325" flood-opacity=".22"/></filter>
+    <pattern id="blocks" width="170" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(-11)">
+      <rect x="12" y="12" width="112" height="70" rx="12" fill="#fff" stroke="#dce9de" stroke-width="3"/>
+      <path d="M0 101h170M148 0v120" stroke="#d6e6d9" stroke-width="9"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="680" fill="url(#bg)"/>
+  <rect width="1200" height="680" fill="url(#blocks)" opacity=".86"/>
+  <g fill="#b8d9b9" opacity=".8">
+    <circle cx="105" cy="110" r="25"/><circle cx="155" cy="96" r="19"/><circle cx="1080" cy="560" r="28"/><circle cx="1028" cy="584" r="21"/><circle cx="910" cy="92" r="20"/>
+  </g>
+  <g fill="#8fbd91"><rect x="101" y="129" width="8" height="28" rx="4"/><rect x="1076" y="588" width="9" height="31" rx="4"/><rect x="906" y="110" width="8" height="26" rx="4"/></g>
+  <path d="M95 590C220 520 170 414 325 398c167-18 121-172 286-170 182 2 148 189 301 174 101-10 128-102 190-184" fill="none" stroke="#fff" stroke-width="42" stroke-linecap="round"/>
+  <path d="M95 590C220 520 170 414 325 398c167-18 121-172 286-170 182 2 148 189 301 174 101-10 128-102 190-184" fill="none" stroke="url(#route)" stroke-width="25" stroke-linecap="round" filter="url(#shadow)"/>
+  <circle cx="96" cy="590" r="18" fill="#fff" stroke="#269a46" stroke-width="10"/>
+  <g transform="translate(1025 70)" filter="url(#shadow)">
+    <path d="M80 0C35 0 0 35 0 80c0 63 80 151 80 151s80-88 80-151C160 35 125 0 80 0z" fill="url(#route)"/>
+    <circle cx="80" cy="78" r="34" fill="#fff"/><circle cx="80" cy="78" r="18" fill="#a5dc85"/>
+  </g>
+</svg>

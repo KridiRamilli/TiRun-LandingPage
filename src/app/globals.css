@@ -273,16 +273,23 @@ img { max-width: 100%; display: block; }
 .feature-card p { margin: 0; color: var(--muted); line-height: 1.6; }
 
 .preview-section { overflow: hidden; }
-.preview-grid { display: grid; grid-template-columns: 0.72fr 1.28fr; align-items: center; gap: 58px; }
+.preview-grid { display: grid; grid-template-columns: .62fr 1.38fr; align-items: center; gap: 42px; }
 .preview-copy h2 { margin: 18px 0; font-size: clamp(2.4rem, 4vw, 3.8rem); line-height: 1.04; letter-spacing: -0.05em; }
 .preview-copy > p { color: var(--muted); line-height: 1.72; }
 .check-list { list-style: none; padding: 0; margin: 28px 0; display: grid; gap: 13px; }
 .check-list li { display: flex; align-items: center; gap: 11px; color: #34453a; }
 .check-list span { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--green-600); font-size: .72rem; }
 .text-link { display: inline-flex; align-items: center; gap: 5px; color: var(--green-700); font-weight: 850; }
-.preview-art { position: relative; padding: 28px; border-radius: 34px; background: linear-gradient(135deg, #edf9ef, #fafffb); box-shadow: inset 0 0 0 1px var(--line); }
+.preview-art { position: relative; min-width: 0; padding: 34px 22px 26px; border-radius: 34px; background: linear-gradient(135deg, #edf9ef, #fafffb); box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
 .preview-art::before { content: ""; position: absolute; width: 230px; height: 230px; border-radius: 50%; right: -60px; top: -60px; background: rgba(55,185,101,.13); filter: blur(12px); }
-.preview-art img { position: relative; width: 100%; border-radius: 24px; box-shadow: 0 22px 55px rgba(10,56,28,.14); }
+.phone-gallery { position: relative; z-index: 1; min-height: 460px; display: flex; align-items: center; justify-content: center; }
+.app-phone { position: absolute; width: 25%; margin: 0; overflow: hidden; border: 6px solid #fff; border-radius: 28px; background: #fff; box-shadow: 0 22px 46px rgba(10,56,28,.18); transform-origin: center bottom; }
+.app-phone img { width: 100%; aspect-ratio: 9 / 17.2; object-fit: contain; object-position: top; background: #fff; }
+.app-phone-1 { left: 0; transform: rotate(-7deg) translateY(22px); }
+.app-phone-2 { left: 18%; transform: rotate(-3deg) translateY(5px); }
+.app-phone-3 { left: 37.5%; z-index: 3; width: 27%; transform: translateY(-8px); }
+.app-phone-4 { right: 18%; transform: rotate(3deg) translateY(5px); }
+.app-phone-5 { right: 0; transform: rotate(7deg) translateY(22px); }
 
 .city-section { padding-top: 70px; }
 .city-layout { display: grid; grid-template-columns: .78fr 1.22fr; align-items: center; gap: 58px; margin-bottom: 30px; }
@@ -391,6 +398,9 @@ img { max-width: 100%; display: block; }
   .trust-grid div:last-child { border-bottom: 0; }
   .step-card { min-height: 275px; }
   .preview-art { padding: 12px; border-radius: 24px; }
+  .phone-gallery { min-height: 430px; justify-content: flex-start; gap: 14px; overflow-x: auto; padding: 18px 8px 24px; scroll-snap-type: x mandatory; }
+  .app-phone { position: relative; inset: auto; width: 230px; min-width: 230px; border-width: 5px; transform: none; scroll-snap-align: center; }
+  .app-phone-3 { width: 230px; }
   .landmark-card { width: 270px; }
   .landmark-card > img { height: 175px; }
   .route-decoration, .route-decoration img { height: 270px; }
