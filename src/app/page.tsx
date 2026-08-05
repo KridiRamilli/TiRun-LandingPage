@@ -24,25 +24,25 @@ const steps = [
     number: "1",
     title: "Choose a route",
     text: "Pick a curated route that fits your time, pace and mood.",
-    image: "/assets/how-route.webp",
+    image: "/assets/how-route-hd.png",
   },
   {
     number: "2",
     title: "Walk & explore",
     text: "Follow the map and discover landmarks along the way.",
-    image: "/assets/how-walk.webp",
+    image: "/assets/how-walk-hd.png",
   },
   {
     number: "3",
     title: "Listen to stories",
     text: "Hear engaging audio guides in Albanian or English.",
-    image: "/assets/how-audio.webp",
+    image: "/assets/how-audio-hd.png",
   },
   {
     number: "4",
     title: "Earn & share",
     text: "Unlock badges, track progress and share your journey.",
-    image: "/assets/how-badge.webp",
+    image: "/assets/how-badge-hd.png",
   },
 ];
 
@@ -56,19 +56,27 @@ const features = [
 ];
 
 const landmarks = [
-  { title: "Skanderbeg Square", image: "/assets/landmarks/skanderbeg-square.jpg" },
-  { title: "Et’hem Bey Mosque", image: "/assets/landmarks/ethem-bey-mosque.jpg" },
-  { title: "Clock Tower", image: "/assets/landmarks/clock-tower.jpg" },
-  { title: "National Historical Museum", image: "/assets/landmarks/national-history-museum.jpg" },
-  { title: "Pyramid of Tirana", image: "/assets/landmarks/pyramid-of-tirana.jpg" },
-  { title: "Bunk’Art 2", image: "/assets/landmarks/bunkart-2.jpg" },
-  { title: "Reja", image: "/assets/landmarks/reja.jpg" },
-  { title: "Resurrection of Christ Cathedral", image: "/assets/landmarks/orthodox-cathedral.jpg" },
-  { title: "Castle of Tirana", image: "/assets/landmarks/tirana-castle.jpg" },
-  { title: "Mother Teresa Square", image: "/assets/landmarks/mother-teresa-square.jpg" },
-  { title: "Air Albania Stadium", image: "/assets/landmarks/air-albania-stadium.jpg" },
-  { title: "Grand Park of Tirana", image: "/assets/landmarks/grand-park.jpg" },
-  { title: "Dajti Mountain", image: "/assets/landmarks/dajti-mountain.jpg" },
+  { title: "Skanderbeg Square", image: "/assets/landmarks-illustrated/skanderbeg-square.webp" },
+  { title: "Et’hem Bey Mosque", image: "/assets/landmarks-illustrated/ethem-bey-mosque.webp" },
+  { title: "Clock Tower", image: "/assets/landmarks-illustrated/clock-tower.webp" },
+  { title: "National Historical Museum", image: "/assets/landmarks-illustrated/national-history-museum.webp" },
+  { title: "Pyramid of Tirana", image: "/assets/landmarks-illustrated/pyramid-of-tirana.webp" },
+  { title: "Bunk’Art 2", image: "/assets/landmarks-illustrated/bunkart-2.webp" },
+  { title: "Reja", image: "/assets/landmarks-illustrated/reja.webp" },
+  { title: "Resurrection of Christ Cathedral", image: "/assets/landmarks-illustrated/orthodox-cathedral.webp" },
+  { title: "Castle of Tirana", image: "/assets/landmarks-illustrated/tirana-castle.webp" },
+  { title: "Mother Teresa Square", image: "/assets/landmarks-illustrated/mother-teresa-square.webp" },
+  { title: "Air Albania Stadium", image: "/assets/landmarks-illustrated/air-albania-stadium.webp" },
+  { title: "Grand Park of Tirana", image: "/assets/landmarks-illustrated/grand-park.webp" },
+  { title: "Dajti Mountain", image: "/assets/landmarks-illustrated/dajti-mountain.webp" },
+];
+
+const appScreens = [
+  { title: "Welcome", image: "/assets/app-screens/welcome.png" },
+  { title: "Language selection", image: "/assets/app-screens/language.png" },
+  { title: "The route", image: "/assets/app-screens/route.png" },
+  { title: "Route completed", image: "/assets/app-screens/completed.png" },
+  { title: "Tirana Run map", image: "/assets/app-screens/map.png" },
 ];
 
 const heroLandmarks = [landmarks[0], landmarks[3], landmarks[1], landmarks[4], landmarks[11]];
@@ -320,7 +328,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div className="preview-art" {...reveal} transition={{ duration: 0.7, delay: 0.1 }}>
-            <img src="/assets/app-preview.webp" alt="Preview of Tirana Run app screens" />
+            <div className="phone-gallery" aria-label="Tirana Run app screens">
+              {appScreens.map((screen, index) => (
+                <figure className={`app-phone app-phone-${index + 1}`} key={screen.title}>
+                  <img src={screen.image} alt={screen.title} loading={index > 1 ? "lazy" : "eager"} />
+                </figure>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -335,7 +349,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div className="route-decoration" {...reveal} transition={{ duration: 0.75, delay: 0.08 }}>
-            <img src="/assets/route-pin.webp" alt="Tirana Run route and map pin" />
+            <img src="/assets/route-pin-hd.svg" alt="Tirana Run route and map pin" />
           </motion.div>
         </div>
 
