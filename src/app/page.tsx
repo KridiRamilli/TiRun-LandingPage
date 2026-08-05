@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+  import { useForm, ValidationError } from '@formspree/react';
+
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -98,6 +100,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [activeLandmark, setActiveLandmark] = useState(0);
+  const [state, handleSubmit] = useForm("mgaweojv");
 
   useEffect(() => {
     const timer = window.setInterval(
@@ -109,8 +112,12 @@ export default function Home() {
 
   function submitWaitlist(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!email.trim()) return;
-    setSubmitted(true);
+    handleSubmit(event);
+      if (state.succeeded){
+        
+        if (!email.trim()) return;
+        setSubmitted(true);
+      }
   }
 
   return (
@@ -414,7 +421,11 @@ export default function Home() {
                     placeholder="Enter your email address"
                     value={email}
                     onChange={(event) => setEmail(event.target.value)}
-                  />
+                  /><ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
                   <button type="submit">Join the waitlist <ArrowRight size={18} /></button>
                 </form>
               )}

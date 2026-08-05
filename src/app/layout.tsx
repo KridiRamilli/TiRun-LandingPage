@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tirana Run — Discover Tirana, Step by Step",
+  title: "TiRun — Discover Tirana, Step by Step",
   description:
     "Explore Tirana through a guided walking route with audio stories, step tracking, badges and a modern offline-ready PWA.",
   metadataBase: new URL("https://tirana.run"),
   openGraph: {
-    title: "Tirana Run",
+    title: "TiRun",
     description: "Discover Tirana, step by step.",
     type: "website",
   },
     icons: {
-    icon: "/favicon.ico",
-    shortcut: "/android-chrome-192x192.png",
-    apple: "/apple-touch-icon.png",
+    icon: "assets/favicon.ico",
+    shortcut: "assets/android-chrome-192x192.png",
+    apple: "assets/apple-touch-icon.png",
   },
 };
 
