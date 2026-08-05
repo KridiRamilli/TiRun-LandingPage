@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     description: "Discover Tirana, step by step.",
     type: "website",
   },
+    icons: {
+    icon: "/favicon.ico",
+    shortcut: "/android-chrome-192x192.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
