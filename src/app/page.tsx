@@ -173,7 +173,7 @@ export default function Home() {
             <source media="(max-width: 600px)" srcSet="/assets/hero-mobile.webp" />
             <motion.img
               className="hero-background"
-              src="/assets/hero-clean.png"
+              src="/assets/hero-clean.webp"
               alt="Tirana Run route, mobile app and walkers in Tirana"
               initial={{ opacity: 0, scale: 1.025 }}
               animate={{ opacity: 1, scale: 1 }}
