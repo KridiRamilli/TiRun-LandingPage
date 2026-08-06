@@ -79,11 +79,11 @@ const landmarks = [
 ];
 
 const appScreens = [
-  { title: "Welcome", image: "/assets/app-screens/welcome.png" },
-  { title: "Language selection", image: "/assets/app-screens/language.png" },
-  { title: "The route", image: "/assets/app-screens/route.png" },
-  { title: "Route completed", image: "/assets/app-screens/completed.png" },
-  { title: "Tirana Run map", image: "/assets/app-screens/map.png" },
+  { title: "Welcome", image: "/assets/app-screens/welcome.webp" },
+  { title: "Language selection", image: "/assets/app-screens/language.webp" },
+  { title: "The route", image: "/assets/app-screens/route.webp" },
+  { title: "Route completed", image: "/assets/app-screens/completed.webp" },
+  { title: "Tirana Run map", image: "/assets/app-screens/map.webp" },
 ];
 
 const heroLandmarks = [landmarks[0], landmarks[3], landmarks[1], landmarks[4], landmarks[11]];
