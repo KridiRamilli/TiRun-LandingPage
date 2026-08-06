@@ -29,26 +29,26 @@ const steps = [
     number: "1",
     title: "Choose a route",
     text: "Pick a curated route that fits your time, pace and mood.",
-    image: "/assets/how-route-hd.png",
+    image: "/assets/how-route-hd.webp",
   },
   {
     number: "2",
     title: "Walk & explore",
     text: "Follow the map and discover landmarks along the way.",
-    image: "/assets/how-walk-hd.png",
+    image: "/assets/how-walk-hd.webp",
   },
   {
     number: "3",
     title: "Listen to stories",
     text: "Hear engaging audio guides in Albanian or English.",
-    image: "/assets/how-audio-hd.png",
+    image: "/assets/how-audio-hd.webp",
     mobileTitle: "Learn & enjoy",
   },
   {
     number: "4",
     title: "Earn & share",
     text: "Unlock badges, track progress and share your journey.",
-    image: "/assets/how-badge-hd.png",
+    image: "/assets/how-badge-hd.webp",
     mobileTitle: "Finish & share",
   },
 ];
@@ -401,7 +401,7 @@ export default function Home() {
         </div> */}
         <div className="container">
           <motion.div className="waitlist-card" {...reveal}>
-            <img className="waitlist-art" src="/assets/waitlist-background.png" alt="Runner, Tirana skyline and route pin illustration" />
+            <img className="waitlist-art" src="/assets/waitlist-background.webp" alt="Runner, Tirana skyline and route pin illustration" />
             <div className="waitlist-content">
               <span className="eyebrow"><Sparkles size={15} /> Coming soon</span>
               <h2>Coming soon</h2>
