@@ -11,10 +11,14 @@ export const metadata: Metadata = {
     description: "Discover Tirana, step by step.",
     type: "website",
   },
-    icons: {
-    icon: "assets/favicon.ico",
-    shortcut: "assets/android-chrome-192x192.png",
-    apple: "assets/apple-touch-icon.png",
+  icons: {
+    icon: [
+      { url: "/assets/favicon.ico?v=tirun-2", sizes: "16x16 32x32 48x48" },
+      { url: "/assets/favicon-32x32.png?v=tirun-2", type: "image/png", sizes: "32x32" },
+      { url: "/assets/favicon.svg?v=tirun-2", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: "/assets/favicon.ico?v=tirun-2",
+    apple: { url: "/assets/apple-touch-icon.png?v=tirun-2", sizes: "180x180", type: "image/png" },
   },
 };
 

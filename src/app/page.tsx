@@ -123,7 +123,7 @@ export default function Home() {
       <header className="site-header">
         <div className="container header-inner">
           <a className="brand" href="#top" aria-label="Tirana Run home">
-            <img src="/assets/logoTiRun.png" alt="Tirana Run" />
+            <img src="/assets/tirun-animated.svg" alt="Tirana Run" />
           </a>
 
           <nav className="desktop-nav" aria-label="Primary navigation">
@@ -436,8 +436,10 @@ export default function Home() {
       <footer className="footer">
         <div className="container footer-grid">
           <div className="footer-brand">
-            <img src="/assets/logoTiRun.png" alt="Tirana Run" />
-            <p>Discovering Tirana, step by step.</p>
+            <h2 className="footer-statement">
+              Your next discovery<br />starts with <span>a step.</span>
+            </h2>
+            <p className="footer-signoff">Made for curious feet. Built in Tirana.</p>
           </div>
           <div>
             <h3>Product</h3>
@@ -460,7 +462,7 @@ export default function Home() {
         <div className="container footer-bottom">
           <span>© {new Date().getFullYear()} Tirana Run.</span>
           <span>Built for the wonderful city of Tirana.</span>
-          <a href="/assets/landmarks/sources.json" target="_blank" rel="noreferrer">Developed by AZZE</a>
+          <a href="https://azze.ai" target="_blank" rel="noreferrer">Developed by AZZE</a>
         </div>
       </footer>
     </main>
