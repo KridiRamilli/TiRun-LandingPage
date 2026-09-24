@@ -404,7 +404,7 @@ export default function Home() {
           <motion.div className="waitlist-card" {...reveal}>
             <img className="waitlist-art" src="/assets/waitlist-background.webp" alt="Runner, Tirana skyline and route pin illustration" />
             <div className="waitlist-content">
-              <span className="eyebrow"><Sparkles size={15} /> Coming soon</span>
+              <span className="eyebrow"><Sparkles size={15} /> Almost at the Starting Line!</span>
               <h2>Coming soon</h2>
               <p>Be the first to explore. Join the waitlist today.</p>
 
