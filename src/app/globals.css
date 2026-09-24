@@ -10,7 +10,7 @@
   --green-50: #f3f9f7;
   --orange: #ff5c00;
   --orange-light: #ff9a15;
-  --orange-ink: #b84000;
+  --orange-ink: #ff5c00;
   --orange-soft: #fff0e5;
   --ink: #182124;
   --muted: #5f706d;
@@ -72,8 +72,8 @@ img { max-width: 100%; display: block; }
 }
 .button:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(0, 82, 77, 0.28); }
 .button-small { min-height: 45px; padding: 0 18px; font-size: 0.9rem; }
-.button-secondary { background: rgba(255, 255, 255, 0.92); color: var(--green-900); border-color: var(--line); box-shadow: var(--soft-shadow); }
-.button:not(.button-secondary) svg { color: var(--orange-light); }
+.button-secondary { background: rgba(255, 255, 255, 0.92); color: var(--orange); border-color: var(--orange); box-shadow: var(--soft-shadow); }
+.button:not(.button-secondary) svg { color: white; }
 :where(a, button, input):focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
 .waitlist-form:focus-within { border-color: var(--green-700); }
 
@@ -181,7 +181,7 @@ img { max-width: 100%; display: block; }
 .phone-place-card strong, .phone-place-card span { display: block; }
 .phone-place-card strong { font-size: clamp(.52rem, .68vw, .75rem); line-height: 1.15; }
 .phone-place-card div > span { margin-top: 4px; color: #647872; font-size: clamp(.42rem, .5vw, .58rem); }
-.phone-play { width: 26px; height: 26px; display: grid !important; place-items: center; border-radius: 50%; color: white; background: var(--green-600); font-size: 9px; }
+.phone-play { width: 26px; height: 26px; display: grid !important; place-items: center; border-radius: 50%; color: white; background: var(--orange); font-size: 9px; }
 .hero-card-dots { position: absolute; left: 50%; bottom: -19px; transform: translateX(-50%); display: flex; gap: 5px; }
 .hero-card-dots button { width: 6px; height: 6px; padding: 0; border: 0; border-radius: 99px; background: #b4cbc5; cursor: pointer; transition: width .2s ease, background .2s ease; }
 .hero-card-dots button.active { width: 18px; background: var(--orange); }
@@ -232,7 +232,7 @@ img { max-width: 100%; display: block; }
 .section-heading { margin-bottom: 45px; }
 .section-heading.centered { max-width: 700px; margin-inline: auto; text-align: center; }
 .section-heading.centered .eyebrow { margin-inline: auto; }
-.section-heading .eyebrow, .preview-copy .eyebrow, .city-copy .eyebrow, .waitlist-content .eyebrow { color: var(--orange-ink); background: var(--orange-soft); }
+.section-heading .eyebrow, .preview-copy .eyebrow, .city-copy .eyebrow, .waitlist-content .eyebrow { color: white; background: var(--orange); }
 .section-heading h2, .city-copy h2 { margin: 17px 0 12px; font-size: clamp(2.3rem, 4vw, 3.65rem); line-height: 1.04; letter-spacing: -0.045em; }
 .section-heading p, .city-copy p { color: var(--muted); font-size: 1.02rem; line-height: 1.7; }
 
@@ -266,8 +266,8 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: var(--green-950);
-  background: var(--orange-light);
+  color: white;
+  background: var(--orange);
   font-size: .78rem;
   font-weight: 900;
 }
