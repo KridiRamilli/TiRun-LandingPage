@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SiteLoader from "./SiteLoader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><SiteLoader>{children}</SiteLoader></body>
     </html>
   );
 }

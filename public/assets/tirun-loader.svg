@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1720" height="594" viewBox="0 0 1720 594" role="img" aria-labelledby="logoTitle">
 <title id="logoTitle">TiRun</title>
-<!-- Original animated symbol, with its 10-second cycle preserved. -->
+<!-- Original animated symbol, with a 4-second loader cycle. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="607" height="594" viewBox="0 0 607 594">
 <defs>
 
@@ -63,7 +63,7 @@ C 408 352, 408 327, 405 305
   </mask>
 
   <style>
-    #roadReveal path { animation: roadDraw 10s linear infinite; }
+    #roadReveal path { animation: roadDraw 4s linear infinite; }
     @keyframes roadDraw {
       0%, 5% { stroke-dashoffset: 1; }
       30%, 98% { stroke-dashoffset: 0; }
@@ -78,15 +78,15 @@ C 408 352, 408 327, 405 305
       opacity: 1;
       transform-box: fill-box;
       transform-origin: center;
-      animation: sunPulse 2.1s ease-in-out infinite;
+      animation: sunPulse 1.4s ease-in-out infinite;
     }
     .roadHold {
       opacity: 0;
-      animation: roadHold 10s linear infinite;
+      animation: roadHold 4s linear infinite;
     }
     .objects {
       opacity: 0;
-      animation: objectsIn 10s linear infinite;
+      animation: objectsIn 4s linear infinite;
     }
 
     @keyframes sunPulse {
